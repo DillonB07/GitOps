@@ -5,7 +5,7 @@ services:
     container_name: jackett
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
       - AUTO_UPDATE=true #optional
     volumes:
@@ -20,7 +20,7 @@ services:
     container_name: transmission
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
     volumes:
       - ./transmission:/config
