@@ -14,7 +14,20 @@ services:
     ports:
       - 9117:9117
     restart: unless-stopped
-
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1003
+      - TZ=Europe/London
+    volumes:
+      - /media/storage/sabnzbd/config:/config
+      - /media/storage/sabnzbd/downloads:/downloads #optional
+      - /media/storage/sabnzbd/incomplete-downloads:/incomplete-downloads #optional
+    ports:
+      - 8080:8080
+    restart: unless-stopped
   transmission:
     image: linuxserver/transmission
     container_name: transmission
