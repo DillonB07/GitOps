@@ -5,7 +5,7 @@ services:
     container_name: jellyfin
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
     volumes:
       - ./jellyfin_config:/config
@@ -21,7 +21,7 @@ services:
     container_name: sonarr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
     volumes:
       - ./sonarr_config:/config
@@ -37,7 +37,7 @@ services:
     container_name: radarr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
     volumes:
       - ./radarr_config:/config
@@ -52,7 +52,7 @@ services:
     container_name: bazarr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - TZ=Europe/London
     volumes:
       - ./bazarr_config:/config
@@ -68,7 +68,7 @@ services:
     container_name: jellyseerr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1003
       - LOG_LEVEL=debug
       - TZ=Europe/London
     ports:
