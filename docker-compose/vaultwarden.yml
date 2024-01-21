@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+container_name: vaultwarden
+    restart: unless-stopped
+    networks:
+      - default
+    volumes:
+      - ./vw-data:/data
+    ports:
+      - 7277:80
+    environment:
+      - LOGIN_RATELIMIT_MAX_BURST=10
+      - LOGIN_RATELIMIT_SECONDS=60
+      - DOMAIN=https://vaultwarden.dillonb07.studio
+      - INVITATION_ORG_NAME=DillonB07
+      - INVITATION_ALLOWED=true
+      - ADMIN_TOKEN=x
+      - SIGNUPS_ALLOWED=false
+      - EMERFENCY_ACCESS_ALLOWED=true
+      - SENDS_ALLOWED=true
+      - WEB_VAULT_ENABLE=true
+      - WEBSOCKET_ENABLED=true
