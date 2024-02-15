@@ -6,6 +6,8 @@ networks:
 
 volumes:
   prometheus_data: {}
+  prometheus_config:
+    external: true
 
 services:
   node-exporter:
@@ -31,7 +33,7 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_config:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
