@@ -8,8 +8,8 @@ services:
       - serve
     environment:
       - TZ=UTC    # optional: set desired timezone
-      - NTFY_AUTH_DEFAULT_ACCESS = "read-only"
-      - NTFY_ENABLE_LOGIN = "true"
+      - NTFY_AUTH_DEFAULT_ACCESS="read-only"
+      - NTFY_ENABLE_LOGIN="true"
     volumes:
       - /var/cache/ntfy:/var/cache/ntfy
       - /etc/ntfy:/etc/ntfy
