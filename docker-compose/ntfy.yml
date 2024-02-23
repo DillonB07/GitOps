@@ -24,6 +24,8 @@ services:
       NTFY_WEB_PUSH_FILE: /var/cache/ntfy/webpush.db
       NTFY_WEB_PUSH_EMAIL_ADDRESS: $WEB_PUSH_EMAIL_ADDR
       NTFY_ENABLE_METRICS: true
+      NTFY_ENABLE_SIGNUP: true
+      NTFY_ENABLE_RESERVATIONS: true
     volumes:
       - /var/cache/ntfy:/var/cache/ntfy
       - /etc/ntfy:/etc/ntfy
