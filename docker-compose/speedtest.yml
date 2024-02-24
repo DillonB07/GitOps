@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+    speedtest-tracker:
+        container_name: speedtest-tracker
+        ports:
+            - 8081:80
+            - 8443:443
+        environment:
+            - DB_CONNECTION=sqlite
+        volumes:
+            - ./data:/config
+            - ./web:/etc/ssl/web
+        image: lscr.io/linuxserver/speedtest-tracker:latest
+        restart: unless-stopped
