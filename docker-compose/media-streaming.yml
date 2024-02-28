@@ -12,6 +12,7 @@ services:
       - /media/storage/tvshows:/data/tvshows
       - /media/storage/movies:/data/movies
       - /media/storage/anime:/data/anime
+      - /media/storage/music:/data/music
     ports:
       - 8096:8096
     restart: unless-stopped
