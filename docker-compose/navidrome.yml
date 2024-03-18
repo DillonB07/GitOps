@@ -11,8 +11,12 @@ services:
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: "" 
+      ND_LASTFM_ENABLED: true
       ND_LASTFM_APIKEY: $LASTFM_KEY
       ND_LASTFM_SECRET: $LASTFM_SECRET
+      ND_ENABLEGRAVATAR: true
+      ND_ENABLESHARING: true
+      ND_ENABLETRANSCODINGCONFIG: true
     volumes:
       - "/navidrome:/data"
       - "/media/storage/music:/music:ro"
