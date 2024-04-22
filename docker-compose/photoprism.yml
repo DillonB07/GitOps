@@ -18,10 +18,11 @@ services:
     ## Changes to the config options in stack.env always require a restart to take effect:
     ## https://docs.photoprism.app/getting-started/config-options/
     env_file:
-      - /media/storage/photoprism/stack.env
+      - stack.env
     working_dir: "/photoprism" # do not change or remove
     ## Storage Folders: "~" is a shortcut for your home directory, "." for the current directory
     volumes:
+      - "/media/storage/photoprism/stack.env:/photoprism/stack.env"
       - "/media/storage/importPhotos:/photoprism/import"
       - "/media/storage/photoprism/originals:/photoprism/originals" # Originals mount path can be changed as needed (DO NOT REMOVE)
       - "/media/storage/photoprism/storage:/photoprism/storage"     # *Writable* storage folder for cache, database, and sidecar files (DO NOT REMOVE)
