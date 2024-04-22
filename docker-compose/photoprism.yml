@@ -17,7 +17,8 @@ services:
       - "2342:2342"
     ## Changes to the config options in stack.env always require a restart to take effect:
     ## https://docs.photoprism.app/getting-started/config-options/
-    env_file: 'stack.env'
+    env_file:
+      - ../stack.env
     working_dir: "/photoprism" # do not change or remove
     ## Storage Folders: "~" is a shortcut for your home directory, "." for the current directory
     volumes:
@@ -38,4 +39,5 @@ services:
     ## Never store database files on an unreliable device such as a USB flash drive, an SD card, or a shared network folder:
     volumes:
       - "./database:/var/lib/mysql" # DO NOT REMOVE
-    env_file: 'stack.env'
+    env_file:
+      - ../stack.env
